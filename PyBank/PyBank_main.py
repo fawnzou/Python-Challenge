@@ -41,3 +41,5 @@ print (f'Total Months: {total_months-1}')
 print (f'Total: ${int(total_amount)}')
 print (f'Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase})')
 print (f'Greatest decrease in Profits: {greatest_decrease_month} (${greatest_decrease})')
+
+
