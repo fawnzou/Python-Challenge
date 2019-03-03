@@ -50,5 +50,11 @@ def paragraph_analysis(filename):
     print(f"Approximate Word Count: {word_count}")
     print(f"Approximate Sentence Count: {len(sentences)}")
     print(f"Average Letter Count: {round(letter_count / word_count, 1)}")
-    print(f"Average Sentence Count: {round(word_count / len(sentences), 1)}")     
+    print(f"Average Sentence Count: {round(word_count / len(sentences), 1)}")    
+    
+# Perform passage analysis on paragraph_1.txt
+paragraph_analysis("paragraph_1.txt")
+
+# Perform passage analysis on paragraph_2.txt
+paragraph_analysis("paragraph_2.txt") 
     
