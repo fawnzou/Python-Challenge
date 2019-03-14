@@ -62,15 +62,13 @@ outfile.write("Election Results\n")
 outfile.write("----------------------------\n")
 outfile.write(f"Total Votes: {total_vote}\n")
 outfile.write("----------------------------\n")
-outfile.write(f'{candi_name[0]}: {candi_votes_perce[0]} ({candi_votes[0]})')
-outfile.write(f'{candi_name[1]}: {candi_votes_perce[1]} ({candi_votes[1]})')                
-outfile.write(f'{candi_name[2]}: {candi_votes_perce[2]} ({candi_votes[2]})')                         
-outfile.write(f'{candi_name[3]}: {candi_votes_perce[3]} ({candi_votes[3]})')
-outfile.write("----------------------------")
+outfile.write(f'{candi_name[0]}: {candi_votes_perce[0]} ({candi_votes[0]})\n')
+outfile.write(f'{candi_name[1]}: {candi_votes_perce[1]} ({candi_votes[1]})\n')                
+outfile.write(f'{candi_name[2]}: {candi_votes_perce[2]} ({candi_votes[2]})\n')                         
+outfile.write(f'{candi_name[3]}: {candi_votes_perce[3]} ({candi_votes[3]})\n')
 outfile.write("----------------------------\n")
 outfile.write(f'Winner: {winner_name}')
 
 outfile.close()
-
 
                           
