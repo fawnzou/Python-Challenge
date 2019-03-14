@@ -3,7 +3,7 @@ import os
 import csv
 
 # Open and read csv
-election_data_csv_path = os.path.join("..", "Resources", "election_data.csv")
+election_data_csv_path = os.path.join("Resources", "election_data.csv")
 with open(election_data_csv_path, newline="", encoding='utf-8-sig') as csvfile:
     csv_reader = csv.reader(csvfile, delimiter=",")
     total_vote=0
@@ -19,9 +19,9 @@ with open(election_data_csv_path, newline="", encoding='utf-8-sig') as csvfile:
             candi=row[2]
             # Store candidate name in dictionary(candi_dic_1) as key
             # store votes they win in dictionary(candi_dic_1) as value
-            candi_dic_1[candi]=candi_dic_1.get(candi,0)+1
+            candi_dic_1[candi]=candi_dic_1.get(candi,0) + 1
             
-total_vote -=1
+total_vote -= 1
 # Counting the percentage of votes each candidate won and convert it to string
 # Store candidate name(key) and percentage(value) in the other dictionary(candi_dic_2)
 for i in candi_dic_1:
@@ -42,12 +42,35 @@ winner_name=candi_name[candi_votes.index(greatest_votes)]
 
 
 print('Election Results')
-print('_ '*10)
-print(f'\nTotal Votes: {total_vote}')
-print('_ '*11)
+print("----------------------------")
+print(f'Total Votes: {total_vote}')
+print("----------------------------")
 print(f'{candi_name[0]}: {candi_votes_perce[0]} ({candi_votes[0]})')
 print(f'{candi_name[1]}: {candi_votes_perce[1]} ({candi_votes[1]})')                
 print(f'{candi_name[2]}: {candi_votes_perce[2]} ({candi_votes[2]})')                         
 print(f'{candi_name[3]}: {candi_votes_perce[3]} ({candi_votes[3]})')
-print('_ '*11)
+print("----------------------------")
 print(f'Winner: {winner_name}')    
+
+
+# Set path for the location of report txt file
+output_path = os.path.join("Resources", "Election Results.txt")
+
+# write the summary of analysis to 'vote_analysis.txt"
+outfile = open(output_path, "w")
+outfile.write("Election Results\n")
+outfile.write("----------------------------\n")
+outfile.write(f"Total Votes: {total_vote}\n")
+outfile.write("----------------------------\n")
+outfile.write(f'{candi_name[0]}: {candi_votes_perce[0]} ({candi_votes[0]})')
+outfile.write(f'{candi_name[1]}: {candi_votes_perce[1]} ({candi_votes[1]})')                
+outfile.write(f'{candi_name[2]}: {candi_votes_perce[2]} ({candi_votes[2]})')                         
+outfile.write(f'{candi_name[3]}: {candi_votes_perce[3]} ({candi_votes[3]})')
+outfile.write("----------------------------")
+outfile.write("----------------------------\n")
+outfile.write(f'Winner: {winner_name}')
+
+outfile.close()
+
+
+                          
